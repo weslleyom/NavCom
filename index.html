@@ -1,100 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!--Biblioteca da fonte Poppins-->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-  
-  <!-- Biblioteca FontAwesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-  <link rel="stylesheet" href="./style.css"  />
-
-  <title>Novo Usuário</title>
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres para suportar acentuação -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Garante responsividade em dispositivos móveis -->
+    <title>Login - &lt;Nav&gt;com</title> <!-- Define o título da página -->
+    
+    <!-- Importação do arquivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Importação da fonte "Poppins" do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    
 </head>
 <body>
-
-  <div class="container">
-    <section class="header">
-      <h1>&lt;Nav&gt;com</h1>
-      
-    </section>
+    <!-- Título principal -->
+    <h1>&lt;Nav&gt;com</h1>
     
-    <form id="form" class="form">
-      <div class="form-content">
-        <label for="username">Nome de usuário*</label>
-        <input
-          type="text"
-          id="username"
-          placeholder="Digite seu nome de usuário..."
-        />
-        <a>Mensagem de erro aqui...</a>
-      </div>
+    <!-- Contêiner do formulário de login -->
+    <div class="login-container">
+        <!-- Texto de cadastro -->
+        <div class="register-text">
+            <span>Entre ou <a href="#">cadastre-se</a></span>
+        </div>
 
-      <div class="form-content">
-        <label for="email">E-mail*</label>
-        <input
-          type="email"
-          id="email"
-          placeholder="Digite seu e-mail..."
-        />
-        <a>Mensagem de erro aqui...</a>
-      </div>
+        <!-- Campo de email/telefone -->
+        <label for="email">Email ou número de telefone*</label>
+        <input id="email" type="text">
 
-      <div class="form-content">
-        <label for="telefone">Telefone*</label>
-        <input
-          type="telefone"
-          id="telefone"
-          placeholder="Digite seu telefone..."
-        />
-        <a>Mensagem de erro aqui...</a>
-      </div>
-      
-      <div class="form-content">
+        <!-- Campo de senha -->
         <label for="password">Senha*</label>
-        <div style="position: relative;">
-          <input
-            type="password"
-            id="password"
-            placeholder="Digite sua senha..."
-          />
-          <a>Mensagem de erro aqui...</a>
-          <span id="toggle-password" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">
-            <i class="fas fa-eye"></i> <!-- Ícone para mostrar -->
-          </span>
-        </div>
-      </div>
+        <input id="password" type="password">
 
-      <div class="form-content">
-        <label for="password-confirmation">Confirme a senha*</label>
-        <div style="position: relative;">
-          <input
-            type="password"
-            id="password-confirmation"
-            placeholder="Digite sua senha novamente..."
-          />
-          <a>Mensagem de erro aqui...</a>
-          <span id="toggle-password-confirmation" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">
-            <i class="fas fa-eye"></i> <!-- Ícone para mostrar -->
-          </span>
-        </div>
-      </div>
+        <!-- Link para recuperação de senha -->
+        <a href="#" class="forgot-password">Esqueceu a senha?</a>
 
-      <ul id="menu_ul">
-        <a href="#" id="suggest-password">Sugerir senha</a>
-      </ul>
+        <!-- Botão de login -->
+        <button class="login-btn">Entrar</button>
 
-      <button type="submit">Cadastrar</button>
-    </form>
-
-  </div>
-
-  <script src="./script.js"></script>
+        <!-- Botão de login com Google com ícone SVG -->
+        <button class="google-btn">
+            <svg class="google-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48">
+                <path fill="#4285F4" d="M24 9.5c3.69 0 6.95 1.27 9.54 3.38l7.13-7.13C35.86 2.01 30.27 0 24 0 14.61 0 6.45 5.14 2.48 12.62l8.35 6.48C13.05 13.49 18.06 9.5 24 9.5z"></path>
+                <path fill="#34A853" d="M46.91 24.5c0-1.57-.14-3.08-.41-4.5H24v9.5h12.96c-.66 3.37-2.58 6.16-5.41 8.03l8.35 6.47C44.35 39.55 46.91 32.5 46.91 24.5z"></path>
+                <path fill="#FBBC05" d="M10.83 28.88a14.64 14.64 0 0 1-.83-4.88c0-1.7.3-3.33.83-4.88l-8.35-6.48C.93 15.07 0 19.14 0 23.5s.93 8.43 2.48 11.88l8.35-6.48z"></path>
+                <path fill="#EA4335" d="M24 47c6.27 0 11.86-2.01 16.67-5.47l-8.35-6.47c-2.41 1.6-5.45 2.55-8.32 2.55-5.94 0-10.95-3.99-12.84-9.6l-8.35 6.48C6.45 40.86 14.61 47 24 47z"></path>
+            </svg>
+            Continuar com o Google
+        </button>
+        
+    </div>
 </body>
 </html>

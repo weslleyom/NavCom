@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agenda de contatos digital com armazenamento local">
+    <title>Agenda de Contatos</title>
+    
+    <!-- Pré-conexão para melhor performance de carregamento de fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Importa a fonte Poppins do Google Fonts com vários pesos -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/lista.css"> <!-- Link para o arquivo CSS principal -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Ícone da página (favicon) -->
+</head>
+
+<body> <!-- Corpo do documento (conteúdo visível) -->
+    <header class="header"> <!-- Cabeçalho da aplicação -->
+        <h1>Agenda de Contatos</h1> <!-- Título principal -->
+    </header>
+    
+    <main class="main-content"> <!-- Conteúdo principal da aplicação -->
+        <div class="container"> <!-- Container para centralizar conteúdo -->
+            <div id="contact-list" class="contact-list"> <!-- Lista de contatos (preenchida via JS) -->
+                <!-- Contatos serão carregados aqui via JavaScript -->
+            </div>
+            
+            <!-- Botão para adicionar novo contato -->
+            <button class="add-button" id="add-contact-btn">
+                <span class="button-icon">+</span> <!-- Ícone de adição -->
+                Adicionar Contato <!-- Texto do botão -->
+            </button>
+        </div>
+    </main>
+
+    <!-- Modal (janela flutuante) para formulário de contatos -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content"> <!-- Conteúdo do modal -->
+            <span class="close-btn">&times;</span> <!-- Botão de fechar (X) -->
+            <h2 id="modal-title">Adicionar Contato</h2> <!-- Título do modal -->
+            
+            <!-- Formulário para adicionar/editar contatos -->
+            <form id="contact-form">
+                <!-- Campo oculto para armazenar ID do contato durante edição -->
+                <input type="hidden" id="contact-id">
+                
+                <!-- Grupo do campo Nome -->
+                <div class="form-group">
+                    <label for="contact-name">Nome:</label> <!-- Label do campo -->
+                    <input type="text" id="contact-name" required> <!-- Campo de texto obrigatório -->
+                </div>
+                
+                <!-- Grupo do campo Telefone -->
+                <div class="form-group">
+                    <label for="contact-phone">Telefone:</label>
+                    <input type="tel" id="contact-phone" required> <!-- Campo de telefone obrigatório -->
+                </div>
+                
+                <!-- Grupo do campo E-mail -->
+                <div class="form-group">
+                    <label for="contact-email">E-mail (opcional):</label>
+                    <input type="email" id="contact-email"> <!-- Campo de e-mail opcional -->
+                </div>
+                
+                <!-- Botão de submit do formulário -->
+                <button type="submit" class="submit-btn">Salvar</button>
+            </form>
+        </div>
+    </div>
+     <!-- Modal de Detalhes do Contato -->
+     <div id="contact-detail-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn"  onclick="window.location.href='lista.html'">&times;</span>
+            <h2>Detalhes do Contato</h2>
+            <div class="contact-details">
+                <h3 id="detail-name"></h3>
+                <p id="detail-phone"></p>
+                <p id="detail-email"></p>
+                <small id="detail-date"></small>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé simplificado com logo/marca -->
+    <h1>&lt;Nav&gt;com</h1> <!-- Exemplo de marca/logo -->
+
+    <!-- Script JavaScript da aplicação -->
+    <script src="./JS/lista.js"></script>
+</body>
+</html>

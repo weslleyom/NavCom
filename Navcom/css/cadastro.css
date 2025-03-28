@@ -1,123 +1,160 @@
-/* Reset padrão */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins", sans-serif;
-}
-
-/* Estilos do corpo */
 body {
   background: #121212;
-  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Poppins, sans-serif;
 }
 
-/* Estilos do container */
+/* Container geral dos formulários */
 .container {
   background-color: #fafafa;
   border-radius: 14px;
   margin: 14px;
-  max-width: 600px;
+  max-width: 400px;
   width: 100%;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
-}
-
-/* Estilos do cabeçalho */
-.header {
+  padding: 20px;
   text-align: center;
-  color: black;
 }
 
-/* Estilos do formulário */
+/* Cabeçalhos */
+.header {
+  color: black;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.login-container {
+    text-align: center;
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 70px;
+  text-align: center;
+}
+
+.register-text {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.register-text a{
+  color: white;
+}
+
+
+/* Estilização dos formulários */
 .form {
-  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-radius: 5px;
+  color: white;
 }
 
 .form-content {
-  margin-bottom: 8px;
-  padding-bottom: 8px;
+  margin-bottom: 15px;
+  text-align: left;
   position: relative;
 }
 
 .form-content label {
-  display: inline-block;
-  margin-bottom: 4px;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .form-content input {
-  display: block;
   width: 100%;
+  padding: 10px;
   border-radius: 5px;
-  padding: 8px;
-  border: 2px solid #dfdfdf;
-  transition: background-color 0.3s ease;
-}
-input:hover {
-  background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
-  border-color: black; /* Cor da borda ao passar o mouse */
+  transition: 0.3s;
+  background-color: #333333;
+  border: none;
 }
 
-.form-content a {
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  visibility: hidden;
+.form-content input:hover {
+  background-color: #333333;
 }
 
-/* Botão de envio */
-.form button {
-    width: 100%; /* Ajusta a largura do botão conforme o conteúdo */
-    padding: 12px;
-    border: 0;
-    border-radius: 5px;
-    margin-top: 14px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: black;
-    color: white;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Erro nos campos */
-.form-content.error input {
-  border-color: #ff3b25;
-}
-
-.form-content.error a {
+.form-content .error {
   color: #ff3b25;
-  visibility: visible;
   font-size: 12px;
-  
+  display: none;
 }
 
-/* Menu */
-#menu_ul {
-  display: inline;
+/* Botões */
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  transition: 0.3s;
+  margin-top: 10px;
 }
 
-#menu_ul a {
-  color: rgb(0, 0, 0);
-}
-
-/* Estilização do título */
-h1 {
-  font-size: 70px;
-}
-
-/* Sugestão de senha */
-#suggest-password {
+/* Link de recuperação de senha */
+.forgot-password {
   font-size: 14px;
-  
+  color: #333;
+  text-decoration: none;
+  display: block;
+  margin-top: 10px;
 }
 
-/* Ícones de mostrar/esconder senha */
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* Ícones de senha */
 #toggle-password,
 #toggle-password-confirmation {
-  font-size: 18px;
-  user-select: none;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* Estilização do botão do Google */
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: white;
+  color: black;
+  border: 1px solid #dfdfdf;
+}
+
+.google-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.google-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.login-btn {
+  background-color: white;
+  color: black;
+}
+
+.form-content>label {
+  font-size: 13px;
+}
+.sugerir-senha{
+  text-align: start;
+  color: white;
 }

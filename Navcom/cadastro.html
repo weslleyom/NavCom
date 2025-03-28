@@ -1,101 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!--Biblioteca da fonte Poppins-->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-  
-  <!-- Biblioteca FontAwesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-  <link rel="stylesheet" href="./css/cadastro.css" />
-  <link rel="stylesheet" href="./css/global.css" />
-
-  <title>Novo Usuário</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <title>Cadastro - &lt;Nav&gt;com</title>
+    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="login-container">
+        <h1><a class="logo" href="home.html">&lt;Nav&gt;com</a></h1>
 
-  <div class="container">
-    <section class="header">
-      <h1><a class="a-decoration" href="home.html">&lt;Nav&gt;com</a></h1>
       
-    </section>
-    
-    <form id="form" class="form">
-      <div class="form-content">
-        <label for="username">Nome de usuário*</label>
-        <input
-          type="text"
-          id="username"
-          placeholder="Digite seu nome de usuário..."
-        />
-        <a>Mensagem de erro aqui...</a>
-      </div>
 
-      <div class="form-content">
-        <label for="email">E-mail*</label>
-        <input
-          type="email"
-          id="email"
-          placeholder="Digite seu e-mail..."
-        />
-        <a>Mensagem de erro aqui...</a>
-      </div>
-
-      <div class="form-content">
-        <label for="telefone">Telefone*</label>
-        <input
-          type="telefone"
-          id="telefone"
-          placeholder="Digite seu telefone..."
-        />
-        <a>Mensagem de erro aqui...</a>
-      </div>
-      
-      <div class="form-content">
-        <label for="password">Senha*</label>
-        <div style="position: relative;">
-          <input
-            type="password"
-            id="password"
-            placeholder="Digite sua senha..."
-          />
-          <a>Mensagem de erro aqui...</a>
-          <span id="toggle-password" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">
-            <i class="fas fa-eye"></i> <!-- Ícone para mostrar -->
-          </span>
-        </div>
-      </div>
-
-      <div class="form-content">
-        <label for="password-confirmation">Confirme a senha*</label>
-        <div style="position: relative;">
-          <input
-            type="password"
-            id="password-confirmation"
-            placeholder="Digite sua senha novamente..."
-          />
-          <a>Mensagem de erro aqui...</a>
-          <span id="toggle-password-confirmation" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">
-            <i class="fas fa-eye"></i> <!-- Ícone para mostrar -->
-          </span>
-        </div>
-      </div>
-
-      <ul id="menu_ul">
-        <a class="a-linha" href="#" id="suggest-password">Sugerir senha</a>
-      </ul>
-
-      <button type="submit">Cadastrar</button>
-    </form>
-
-  </div>
-
-  <script src="./JS/campos.js"></script>
+        <form id="form" class="form" action="/user" method="POST" onsubmit="validateForm(event)">
+          <div class="register-text ">
+              <span>Já tem uma conta? <a  href="login.html">Faça login</a></span>
+            
+          </div>
+            <div class="form-content">
+                <label for="username">Nome de usuário*</label>
+                <input id="username" type="text" placeholder="Digite seu nome de usuário...">
+                <span class="error" id="error-username"></span>
+            </div>
+            
+            <div class="form-content">
+                <label for="email">E-mail*</label>
+                <input id="email" type="email" placeholder="Digite seu e-mail...">
+                <span class="error" id="error-email"></span>
+            </div>
+            
+            <div class="form-content">
+                <label for="telefone">Telefone*</label>
+                <input id="telefone" type="text" placeholder="Digite seu telefone...">
+                <span class="error" id="error-telefone"></span>
+            </div>
+            
+            <div class="form-content">
+                <label for="password">Senha*</label>
+                <div style="position: relative;">
+                    <input id="password" type="password" placeholder="Digite sua senha...">
+                    <span class="error" id="error-password"></span>
+                    <span id="toggle-password" class="toggle-password">
+                        <i class="fas fa-eye"></i>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="form-content">
+                <label for="password-confirmation">Confirme a senha*</label>
+                <div style="position: relative;">
+                    <input id="password-confirmation" type="password" placeholder="Digite sua senha novamente...">
+                    <span class="error" id="error-password-confirmation"></span>
+                    <span id="toggle-password-confirmation" class="toggle-password">
+                        <i class="fas fa-eye"></i>
+                    </span>
+                </div>
+            </div>
+            
+            <a class="a-linha sugerir-senha" href="#" id="suggest-password">Sugerir senha</a>
+            
+            <button class="login-btn"><a href="lista.html" class="a-decoration">Cadastrar</a></button>
+        </form>
+    </div>
+    <script src="JS/campo.js"></script>
 </body>
 </html>

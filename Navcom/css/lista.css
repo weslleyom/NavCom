@@ -301,3 +301,17 @@ body {
 .contact-item:hover {
     background: #3d3d3d;
 }
+/*BARRA DE BUSCA*/
+#search-contact {
+    width: 48em;
+    padding: 10px 15px;
+    margin-bottom: 2em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+
+}
+
+#search-contact:focus {
+    outline: none;
+}

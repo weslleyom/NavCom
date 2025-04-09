@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // =============================================
     // SELEÇÃO DE ELEMENTOS DO DOM
     // =============================================
+
+    
     const contactList = document.getElementById('contact-list');
     const addContactBtn = document.getElementById('add-contact-btn');
     const contactModal = document.getElementById('contact-modal');
@@ -9,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModalBtn = document.querySelector('.close-btn');
     const contactForm = document.getElementById('contact-form');
     const modalTitle = document.getElementById('modal-title');
+    const searchInput = document.getElementById('search-contact');
 
     // =============================================
     // VARIÁVEIS DE ESTADO
@@ -16,10 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let contacts = JSON.parse(localStorage.getItem('contacts')) || [];
     let isEditing = false;
     let currentContactId = null;
+    let filteredContacts = [...contacts];
 
     // =============================================
     // INICIALIZAÇÃO
     // =============================================
+    
     renderContacts();
 
     // =============================================
@@ -28,30 +33,73 @@ document.addEventListener('DOMContentLoaded', () => {
     addContactBtn.addEventListener('click', openAddModal);
     closeModalBtn.addEventListener('click', closeModal);
     contactForm.addEventListener('submit', handleFormSubmit);
+    searchInput.addEventListener('input', handleSearch);
+
+     // Restante dos listeners...
+     
+     contactModal.addEventListener('click', (e) => {
+         if (e.target === contactModal) closeAllModals();
+     });
+     detailModal.addEventListener('click', (e) => {
+         if (e.target === detailModal) closeAllModals();
+     });
 
     // =============================================
     // FUNÇÕES PRINCIPAIS
     // =============================================
-
+    function handleSearch(e) {
+        const term = e.target.value.toLowerCase();
+        filteredContacts = contacts.filter(contact => 
+            contact.name.toLowerCase().includes(term) || 
+            contact.phone.includes(term) ||
+            (contact.email && contact.email.toLowerCase().includes(term)))
+        
+        renderContacts();
+    }
     function renderContacts() {
-        if (contacts.length === 0) {
-            contactList.innerHTML = '<p class="empty-message">Nenhum contato cadastrado ainda.</p>';
+        if (filteredContacts.length === 0) {
+            contactList.innerHTML = '<p class="empty-message">Nenhum contato encontrado</p>';
             return;
         }
         
-        contactList.innerHTML = contacts.map(contact => `
-            <div class="contact-item" data-id="${contact.id}" onclick="showContactDetails(${contact.id})">
+        contactList.innerHTML = filteredContacts.map(contact => `
+            <div class="contact-item" data-id="${contact.id}">
                 <div class="contact-info">
                     <h3>${contact.name}</h3>
-                    <small>Adicionado em: ${contact.date}</small>
+                    <small>${contact.phone} • ${contact.date}</small>
                 </div>
                 <div class="contact-actions">
-                    <button class="edit-btn" onclick="event.stopPropagation(); editContact(${contact.id})">✏️</button>
-                    <button class="delete-btn" onclick="event.stopPropagation(); deleteContact(${contact.id})">X</button>
+                    <button class="edit-btn" data-action="edit" data-id="${contact.id}">✏️</button>
+                    <button class="delete-btn" data-action="delete" data-id="${contact.id}">🗑️</button>
                 </div>
             </div>
         `).join('');
     }
+    // Adicione este event listener no seu código
+    contactList.addEventListener('click', (e) => {
+    // Verifica se o clique foi em um botão de ação
+    const actionBtn = e.target.closest('[data-action]');
+    if (actionBtn) {
+        e.stopPropagation();
+        const action = actionBtn.dataset.action;
+        const id = Number(actionBtn.dataset.id);
+        
+        if (action === 'edit') {
+            openEditModal(id);
+        } else if (action === 'delete') {
+            deleteContact(id);
+        }
+        return;
+    }
+
+    // Verifica se o clique foi no item do contato (para mostrar detalhes)
+    const contactItem = e.target.closest('.contact-item');
+    if (contactItem) {
+        const id = Number(contactItem.dataset.id);
+        showContactDetails(id);
+    }
+});
+
 
     function openAddModal() {
         isEditing = false;
@@ -96,8 +144,10 @@ document.addEventListener('DOMContentLoaded', () => {
             id,
             name,
             phone,
-            email,
-            date: new Date().toLocaleDateString()
+            email: email || null,
+            date: isEditing 
+                ? contacts.find(c => c.id === id).date 
+                : new Date().toLocaleDateString()
         };
 
         if (isEditing) {
@@ -111,9 +161,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         saveContacts();
         renderContacts();
+        filteredContacts = [...contacts];
         closeModal();
     }
-
+    function deleteContact(id) {
+        if (confirm('Tem certeza que deseja excluir este contato?')) {
+            contacts = contacts.filter(c => c.id !== id);
+            filteredContacts = filteredContacts.filter(c => c.id !== id);
+            saveContacts();
+            renderContacts();
+        }
+    }
     function formatPhone(phone) {
         const cleaned = phone.replace(/\D/g, '');
         if (cleaned.length === 11) {
@@ -171,3 +229,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 });
+

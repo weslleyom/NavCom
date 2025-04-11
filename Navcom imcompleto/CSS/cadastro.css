@@ -1,0 +1,160 @@
+body {
+  background: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Poppins, sans-serif;
+}
+
+/* Container geral dos formulários */
+.container {
+  background-color: #fafafa;
+  border-radius: 14px;
+  margin: 14px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  text-align: center;
+}
+
+/* Cabeçalhos */
+.header {
+  color: black;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.login-container {
+    text-align: center;
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 70px;
+  text-align: center;
+}
+
+.register-text {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.register-text a{
+  color: white;
+}
+
+
+/* Estilização dos formulários */
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-radius: 5px;
+  color: white;
+}
+
+.form-content {
+  margin-bottom: 15px;
+  text-align: left;
+  position: relative;
+}
+
+.form-content label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-content input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.3s;
+  background-color: #333333;
+  border: none;
+}
+
+.form-content input:hover {
+  background-color: #333333;
+}
+
+.form-content .error {
+  color: #ff3b25;
+  font-size: 12px;
+  display: none;
+}
+
+/* Botões */
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+/* Link de recuperação de senha */
+.forgot-password {
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+  display: block;
+  margin-top: 10px;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* Ícones de senha */
+#toggle-password,
+#toggle-password-confirmation {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* Estilização do botão do Google */
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: white;
+  color: black;
+  border: 1px solid #dfdfdf;
+}
+
+.google-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.google-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.login-btn {
+  background-color: white;
+  color: black;
+}
+
+.form-content>label {
+  font-size: 13px;
+}
+.sugerir-senha{
+  text-align: start;
+  color: white;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html> 
+<html lang="pt-BR"> 
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="Agenda de contatos digital com armazenamento local"> 
+    <title>Agenda de Contatos</title> 
+    
+    <!-- Pré-carregamento de fontes do Google para melhor performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fonte Poppins importada do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Estilo principal da agenda -->
+    <link rel="stylesheet" href="css/lista.css">
+    
+    <!-- Ícone da aba -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Ícones da Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Cabeçalho da página -->
+    <header class="header">
+        <h1>Agenda de Contatos</h1>
+    </header>
+    
+    <!-- Conteúdo principal da página -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- Área de busca com botão de ordenação -->
+            <div class="search-container">
+                <input type="text" id="search-contact" placeholder="Buscar contatos..."> <!-- Campo de busca -->
+                <button id="sort-button" title="Ordenar por nome (A-Z)"> <!-- Botão de ordenação -->
+                    <i class="fas fa-sort-alpha-down"></i>
+                </button>
+            </div>
+
+            <!-- Lista de contatos (carregada dinamicamente via JavaScript) -->
+            <div id="contact-list" class="contact-list">
+                <!-- Contatos serão inseridos aqui -->
+            </div>
+            
+            <!-- Botão para adicionar novo contato -->
+            <button class="add-button" id="add-contact-btn">
+                <span class="button-icon">+</span>
+                Adicionar Contato
+            </button>
+        </div>
+    </main>
+
+    <!-- Modal para adicionar ou editar contatos -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span> <!-- Botão para fechar o modal -->
+            <h2 id="modal-title">Adicionar Contato</h2>
+            <form id="contact-form"> <!-- Formulário de contato -->
+                <input type="hidden" id="contact-id"> <!-- Campo oculto para ID do contato (usado na edição) -->
+
+                <div class="form-group">
+                    <label for="contact-name">Nome:</label>
+                    <input type="text" id="contact-name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-phone">Telefone:</label>
+                    <input type="tel" id="contact-phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-email">E-mail (opcional):</label>
+                    <input type="email" id="contact-email">
+                </div>
+
+                <!-- Botão para salvar o contato -->
+                <button type="submit" class="submit-btn">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para visualizar os detalhes do contato -->
+    <div id="contact-detail-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="window.location.href='lista.html'">&times;</span>
+            <h2>Detalhes do Contato</h2>
+            <div class="contact-details">
+                <h3 id="detail-name"></h3>
+                <p id="detail-phone"></p>
+                <p id="detail-email"></p>
+                <small id="detail-date"></small> <!-- Data de criação/edição -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de confirmação para exclusão de contato -->
+    <div id="confirm-delete-modal" class="custom-modal">
+        <div class="modal-content">
+            <h2>Confirmar exclusão</h2>
+            <hr class="modal-divider">
+            <p>Tem certeza que deseja excluir este contato?</p>
+            <div class="modal-buttons">
+                <button id="cancel-delete-btn" class="btn cancel">Cancelar</button>
+                <button id="confirm-delete-btn" class="btn confirm">Excluir</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botão flutuante de configurações -->
+    <button id="settings-toggle" title="Configurações">
+        <i class="fas fa-cog"></i>
+    </button>
+
+    <button id="profile-button" title="Perfil" >
+        <i class="fas fa-user-circle"></i>
+    </button>
+
+    <!-- Rodapé (simples) -->
+    <h1>&lt;Nav&gt;com</h1> <!-- Pode ser substituído por um rodapé mais elaborado futuramente -->
+
+    <!-- Script principal da aplicação -->
+    <script src="./JS/lista.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Aplica Poppins a todo o corpo */
+    background-color: #000000; /* Fundo neutro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Faz com que o conteúdo fique no centro verticalmente */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-card {
+    background-color: #121212;
+    border-radius: 15px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 500px; /* Largura do quadrado */
+    height: 550px; /* Aumentei a altura do quadrado */
+    text-align: left; /* Alinha os conteúdos à esquerda */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Ajusta para começar do topo */
+    align-items: flex-start; /* Alinha tudo à esquerda */
+    padding: 30px;
+    position: relative; /* Necessário para o posicionamento absoluto do X */
+}
+
+/* Aplicando Poppins a todos os textos dentro da profile-card */
+.profile-body,
+.nav h3,
+label,
+.info-box,
+h2,
+.contact-added,
+.edit-icon,
+.delete-icon {
+    font-family: 'Poppins', sans-serif; /* Aplica a Poppins aqui também */
+}
+
+.profile-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Garante que o conteúdo vá para o topo */
+    align-items: flex-start; /* Garante que os elementos fiquem à esquerda */
+}
+
+.nav {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.nav h3 {
+    font-size: 2.5em;
+    color: #fff; /* Cor do texto "Nav com" */
+    margin: 0;
+}
+
+.info {
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha os rótulos e caixas à esquerda */
+}
+
+label {
+    font-size: 1.2em;
+    color: #fff; /* Cor para os rótulos */
+    margin-bottom: 10px;
+}
+
+.info-box {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    width: 100%; /* Largura 100% para ocupar toda a largura disponível */
+    max-width: 400px; /* Limita a largura máxima para que as caixas não fiquem grandes demais */
+    text-align: left; /* Alinha o conteúdo dentro da caixa à esquerda */
+    border-radius: 10px;
+    font-size: 1.2em;
+}
+
+h2 {
+    font-size: 2.5em;
+    color: #fff; /* Cor para o nome */
+}
+
+.contact-info {
+    color: #bbb; /* Cor mais clara para contraste */
+    margin: 5px 0;
+}
+
+/* Botão de Fechar (X) */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1em;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    background: none;
+    border: none;
+}
+
+/* Quando o contato foi adicionado */
+.contact-added {
+    margin-top: 20px;
+    color: #aaa;
+    font-size: 1.2em;
+}
+
+/* Ícones de edição e exclusão no canto inferior direito */
+.edit-icons {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: auto; /* Coloca os ícones na parte inferior */
+    gap: 15px;
+}
+
+.edit-icon,
+.delete-icon {
+    font-size: 1.5em;
+    color: #fff;
+    cursor: pointer;
+}

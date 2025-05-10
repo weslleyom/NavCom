@@ -65,8 +65,7 @@ http://localhost:5000
 
 ## 📁 Estrutura do Projeto
 cpp
-Copiar
-Editar
+
 ├── static/
 │   ├── lista.js
 │   └── lista.css
@@ -77,8 +76,8 @@ Editar
 └── README.md
 
 ## 🧠 Observações Importantes
-## ✅ A aplicação utiliza MySQL Workbench para gerenciamento do banco de dados.
+✅ A aplicação utiliza MySQL Workbench para gerenciamento do banco de dados.
 
-## 🔌 Certifique-se de que o serviço MySQL esteja ativo antes de iniciar o Flask.
+🔌 Certifique-se de que o serviço MySQL esteja ativo antes de iniciar o Flask.
 
-## 🌙 O design foi feito com um tema escuro moderno e responsivo.
+🌙 O design foi feito com um tema escuro moderno e responsivo.

@@ -36,37 +36,32 @@ Uma aplicação web de **agenda de contatos** feita com **Python (Flask)** no ba
 ---
 ## 🐍 Crie e ative um ambiente virtual
   ```bash
-   Copiar
-   Editar
    py -3.12 -m venv .venv
    .venv\Scripts\activate
 ```
 ## 📦 Instale as dependências
    ```bash
-   Copiar
-   Editar
    pip install -r requirements.txt
 ```
 ## 🛠️ Configure o banco de dados MySQL
 Abra o MySQL Workbench.
-Crie um banco de dados com o nome:
-sql
-Copiar
-Editar
+Crie um banco de dados com o nome navcom:
+```bash
 CREATE DATABASE agenda;
+```
 Execute o script SQL de criação da tabela (fornecido no repositório, se aplicável).
 
 ## 🚀 Inicie o servidor Flask
-bash
-Copiar
-Editar
+```bash
+
 python app.py
+```
 
 ##🌐 Acesse no navegador
 arduino
-Copiar
-Editar
+```bash
 http://localhost:5000
+```
 
 ##📁 Estrutura do Projeto
 cpp

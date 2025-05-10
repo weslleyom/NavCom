@@ -49,7 +49,7 @@ Crie um banco de dados com o nome navcom:
 ```bash
 CREATE DATABASE navcom;
 ```
-Execute o script SQL de criação da tabela (fornecido no repositório, se aplicável).
+Execute o script SQL de criação da tabela (fornecido no repositório).
 
 ## 🚀 Inicie o servidor Flask
 ```bash

@@ -47,7 +47,7 @@ Uma aplicação web de **agenda de contatos** feita com **Python (Flask)** no ba
 Abra o MySQL Workbench.
 Crie um banco de dados com o nome navcom:
 ```bash
-CREATE DATABASE agenda;
+CREATE DATABASE navcom;
 ```
 Execute o script SQL de criação da tabela (fornecido no repositório, se aplicável).
 

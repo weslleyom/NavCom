@@ -2,7 +2,7 @@
 
 Uma aplicação web de **agenda de contatos** feita com **Python (Flask)** no backend e **HTML, CSS e JavaScript** no frontend.
 
-📂 Ideal para aprender sobre CRUD, APIs REST e integração com banco de dados SQL.
+📂 Ideal para aprender sobre CRUD, APIs REST e integração com banco de dados MySQL.
 
 ---
 

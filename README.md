@@ -64,7 +64,6 @@ http://localhost:5000
 ```
 
 ## 📁 Estrutura do Projeto
-cpp
 
 ├── static/
 │   ├── lista.js

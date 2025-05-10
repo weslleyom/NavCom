@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo à &lt;Nav&gt;com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/home.css">
+    <link rel="stylesheet" href="../static/global.css">
+</head>
+<body>
+
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="{{ url_for('static', filename='midia/videoplayback.mp4') }}" type="video/mp4">
+    </video>
+
+    <div class="video-overlay"></div>
+
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo-container">
+            <div class="logo">&lt;Nav&gt;com</div>
+        </div>
+
+        <!-- Frase alternada abaixo da logo -->
+        <p id="dynamic-text" class="dynamic-text"></p> <!-- Frase dinâmica -->
+
+        <!-- Linha fina entre a frase e os botões -->
+        <div class="line"></div>
+
+        <!-- Botões principais (Logar e Cadastrar) -->
+        <div class="buttons">
+            <a href="{{ url_for('lista') }}" class="btn">Acessar</a>
+            
+        </div>
+    </div>
+
+    <script src="../static/animacao.js"></script>
+</body>
+</html>

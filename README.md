@@ -34,15 +34,15 @@ Uma aplicação web de **agenda de contatos** feita com **Python (Flask)** no ba
    git clone https://github.com/seu-usuario/navcom-sql.git
    cd navcom-sql
    ⚙️ Instalação e Configuração
-🔁 Clone o repositório
-bash
+## 🔁 Clone o repositório
+```bash
 Copiar
 Editar
 git clone https://github.com/seu-usuario/seu-repositorio.git
 cd seu-repositorio
 🐍 Crie e ative um ambiente virtual
 bash
-Copiar
+Copiar```
 Editar
 py -3.12 -m venv .venv
 .venv\Scripts\activate

@@ -33,21 +33,27 @@ Uma aplicação web de **agenda de contatos** feita com **Python (Flask)** no ba
    ```bash
    git clone https://github.com/seu-usuario/navcom-sql.git
    cd navcom-sql
+   
 ---
+
 ## 🐍 Crie e ative um ambiente virtual
   ```bash
    py -3.12 -m venv .venv
    .venv\Scripts\activate
+
 ```
+
 ## 📦 Instale as dependências
    ```bash
    pip install -r requirements.txt
+
 ```
 ## 🛠️ Configure o banco de dados MySQL
 Abra o MySQL Workbench.
 Crie um banco de dados com o nome navcom:
 ```bash
 CREATE DATABASE navcom;
+
 ```
 Execute o script SQL de criação da tabela (fornecido no repositório).
 
@@ -55,12 +61,14 @@ Execute o script SQL de criação da tabela (fornecido no repositório).
 ```bash
 
 python app.py
+
 ```
 
 ## 🌐 Acesse no navegador
 arduino
 ```bash
 http://localhost:5000
+
 ```
 
 ## 📁 Estrutura do Projeto

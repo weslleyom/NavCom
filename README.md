@@ -33,24 +33,23 @@ Uma aplicação web de **agenda de contatos** feita com **Python (Flask)** no ba
    ```bash
    git clone https://github.com/seu-usuario/navcom-sql.git
    cd navcom-sql
-
+---
 ## 🐍 Crie e ative um ambiente virtual
-```bash
-Copiar
-Editar
-py -3.12 -m venv .venv
-.venv\Scripts\activate
-
+  ```bash
+   Copiar
+   Editar
+   py -3.12 -m venv .venv
+   .venv\Scripts\activate
+```
 ## 📦 Instale as dependências
-```bash
-Copiar
-Editar
-pip install -r requirements.txt
-
+   ```bash
+   Copiar
+   Editar
+   pip install -r requirements.txt
+```
 ## 🛠️ Configure o banco de dados MySQL
 Abra o MySQL Workbench.
 Crie um banco de dados com o nome:
-
 sql
 Copiar
 Editar

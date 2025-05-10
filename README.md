@@ -1,4 +1,4 @@
-# 📒 Agenda de Contatos - NavcomSQL
+# 📒 Agenda de Contatos - Navcom
 
 Uma aplicação web de **agenda de contatos** feita com **Python (Flask)** no backend e **HTML, CSS e JavaScript** no frontend.
 
